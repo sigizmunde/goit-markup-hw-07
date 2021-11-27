@@ -646,12 +646,22 @@ header {
   background-color: var(--main-bg-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-icon {
   fill: currentColor;
   width: 18px;
   height: 18px;
+}
+
+.modal-close-btn:hover {
+  color: var(--accent-color);
+  transform: rotate(-90deg);
+  border-color: var(--accent-color);
 }
 
 /* order form */
@@ -785,7 +795,7 @@ header {
 
   color: transparent;
   background-color: transparent;
-  border: solid 2px var(--dark-text-color);
+  border: solid 1px var(--dark-text-color);
   border-radius: 2px;
 
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -797,6 +807,10 @@ header {
   color: var(--inverted-text-color);
   background-color: var(--accent-color);
   border: none;
+}
+
+.agreement-checkbox:focus ~ .checkbox-mark {
+  border: solid 2px var(--secondary-text-color);
 }
 
 .order-form .submit-btn {
